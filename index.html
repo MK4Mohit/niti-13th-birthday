@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niti's 13th Birthday | The Daily Prophet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=IM+Fell+English+SC&family=Dancing+Script:wght@600&display=swap');
+
+        body {
+            background-color: #1a1512;
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'IM Fell English SC', serif;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        /* PAGE 1: NEWSPAPER */
+        #page1 { display: block; padding: 20px; max-width: 900px; animation: fadeIn 1.5s; }
+        .newspaper { background-color: #e8dcc4; padding: 40px; box-shadow: 0 0 50px rgba(0,0,0,1); border: 2px solid #4a3728; }
+        
+        .prophet-title { font-family: 'Cinzel Decorative'; font-size: clamp(2rem, 8vw, 4rem); text-align: center; margin: 0; letter-spacing: 4px; border-bottom: 8px double #333; }
+        
+        .photo-frame {
+            border: 12px solid #1a1a1a;
+            width: 280px; height: 350px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.4);
+            margin: 0 auto;
+        }
+
+        .photo-frame img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: sepia(0.5) contrast(1.2);
+            animation: breathe 5s infinite ease-in-out;
+        }
+
+        /* PAGE 2: CAKE ROOM */
+        #page2 {
+            display: none;
+            text-align: center;
+            width: 100%; min-height: 100vh;
+            background: radial-gradient(circle, #2c241e, #000);
+            color: white;
+            justify-content: center; align-items: center; flex-direction: column;
+        }
+
+        .cake-container { position: relative; margin: 100px 0; transform: scale(1.1); transition: opacity 0.8s ease-out; }
+        .cake {
+            width: 280px; height: 140px;
+            background: #f08080; border-radius: 50%;
+            position: relative; box-shadow: 0 10px 0 #d66a6a, 0 20px 0 #333;
+            border: 3px dashed #b22222;
+        }
+        .cake::before {
+            content: "Happee 13th Birthdae Niti";
+            position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%);
+            color: #228b22; font-family: 'Cinzel Decorative'; width: 85%; font-size: 1.2rem;
+        }
+
+        /* 13 Candles Styles */
+        .candle { width: 8px; height: 35px; background: #ffd700; position: absolute; cursor: pointer; transition: 0.3s; z-index: 10; border-radius: 2px; }
+        .flame { width: 10px; height: 14px; background: #ff4500; border-radius: 50% 50% 20% 20%; position: absolute; top: -14px; box-shadow: 0 0 10px #ff4500; animation: flicker 0.1s infinite alternate; }
+
+        /* HOGWARTS LETTER */
+        #hogwartsLetter {
+            display: none; background: #fdf5e6; color: #333;
+            width: 85%; max-width: 500px; padding: 40px;
+            border: 2px solid #4a3728; box-shadow: 0 0 100px gold;
+            text-align: left; font-family: 'Dancing Script', cursive; font-size: 1.4rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes flicker { from { transform: scale(1); } to { transform: scale(1.3); } }
+        @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .magical-btn {
+            margin-top: 30px; padding: 15px 40px; background: #4a3728; color: #e8dcc4;
+            border: 2px solid #ffd700; font-family: 'Cinzel Decorative'; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="page1">
+    <div class="newspaper">
+        <h1 class="prophet-title">THE DAILY PROPHET</h1>
+        <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #333; font-weight: bold; margin-bottom: 20px;">
+            <span>EDITION: TEENAGE WITCH</span>
+            <span>HOGWARTS YEAR 3</span>
+        </div>
+
+        <h2 style="text-align: center; font-size: 2.5rem; font-family: 'Cinzel Decorative';">NITI OFFICIALLY 13!</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center;">
+            <div class="photo-frame">
+                <img src="https://r.jina.ai/i/9e0066f1945143a59371e7d898a129d5" alt="Niti">
+            </div>
+            <div style="flex: 1; min-width: 280px;">
+                <p style="font-size: 1.2rem; line-height: 1.5;">
+                    <span style="font-size: 3rem; float: left; line-height: 0.8; font-family: 'Cinzel Decorative'; padding-right: 10px;">T</span>he Ministry of Magic has issued a special permit today! <strong>Niti</strong> has officially turned 13, meaning she is now eligible for weekend trips to Hogsmeade. 
+                    <br><br>
+                    "A 13th birthday is a powerful milestone," said Albus Dumbledore. "It's the year of the Patronus and the year of the Marauder's Map. Niti is ready for big adventures!"
+                </p>
+            </div>
+        </div>
+        <center><button class="magical-btn" onclick="nextPage()">Apparate to 13th Party! ✨</button></center>
+    </div>
+</div>
+
+<div id="page2">
+    <h1 id="wishText" style="font-family: 'Cinzel Decorative'; color: #ffd700; font-size: 2rem;">Blow out 13 Candles for 13 Wishes!</h1>
+    
+    <div class="cake-container" id="cakeSection">
+        </div>
+
+    <div id="hogwartsLetter">
+        <div style="width: 50px; height: 50px; background: #8b0000; color: gold; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'Cinzel Decorative';">H</div>
+        <center><h3>OFFICIAL HOGWARTS NOTICE</h3></center>
+        <p>Dear Niti,</p>
+        <p>Congratulations on becoming a teenager! As a 13-year-old witch, you are now granted access to the secret passages of the castle.</p>
+        <p>May your 13th year be filled with magic, laughter, and successful spell-casting. Remember: <em>The ones who love us never really leave us.</em></p>
+        <p>Happy Birthday, Niti!</p>
+        <p>— <em>Professor McGonagall</em></p>
+    </div>
+
+    <button class="magical-btn" onclick="location.reload()" style="background:transparent; border-color: #555; font-size: 0.8rem;">Restart Magic</button>
+</div>
+
+<script>
+    let extinguished = 0;
+    const totalCandles = 13;
+
+    // Generate 13 candles in a circle
+    const cakeContainer = document.getElementById('cakeSection');
+    for (let i = 0; i < totalCandles; i++) {
+        const candle = document.createElement('div');
+        candle.className = 'candle';
+        const angle = (i / totalCandles) * Math.PI * 2;
+        const x = 130 + Math.cos(angle) * 110;
+        const y = 30 + Math.sin(angle) * 40;
+        candle.style.left = x + 'px';
+        candle.style.top = (y - 50) + 'px';
+        candle.innerHTML = '<div class="flame"></div>';
+        candle.onclick = function() {
+            if (this.style.opacity !== '0') {
+                this.style.opacity = '0';
+                this.style.pointerEvents = 'none';
+                extinguished++;
+                if (extinguished === totalCandles) showFinal();
+            }
+        };
+        cakeContainer.appendChild(candle);
+    }
+
+    function nextPage() {
+        document.getElementById('page1').style.display = 'none';
+        document.getElementById('page2').style.display = 'flex';
+        window.scrollTo(0,0);
+    }
+
+    function showFinal() {
+        document.getElementById('wishText').innerText = "HAPPY 13th BIRTHDAY NITI!";
+        const section = document.getElementById('cakeSection');
+        section.style.opacity = '0';
+        setTimeout(() => {
+            section.style.display = 'none';
+            document.getElementById('hogwartsLetter').style.display = 'block';
+        }, 800);
+    }
+</script>
+
+</body>
+</html>
